@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Regression Test Suite" parallel="tests" thread-count="1">
+
+<listeners>
+
+<listener class-name="utilityLib.TestListener"></listener>
+</listeners>
+
+<test name="Test">
+<parameter name="browser" value=""/>
+<parameter name="env" value="QA"/>
+
+<classes>
+<class name="helperBase.testNGConfig" />
+<class name= "MyAccountLogin" />
+
+
+</classes>
+
+</test>
+
+
+</suite>
