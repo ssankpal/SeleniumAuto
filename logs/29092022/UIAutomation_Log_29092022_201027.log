@@ -1,0 +1,5 @@
+2022-09-29 20:11:12,821 [TestNG-tests-1] INFO  - Starting Suite Execution
+2022-09-29 20:11:12,826 [TestNG-tests-1] INFO  - Logging Test sample
+2022-09-29 20:11:49,757 [TestNG-tests-1] INFO  - Login Failed! -logger
+2022-09-29 20:11:53,221 [TestNG-methods-1] INFO  - Starting Suite Execution
+2022-09-29 20:11:53,222 [TestNG-methods-2] INFO  - Starting Suite Execution

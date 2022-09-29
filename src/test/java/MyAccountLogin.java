@@ -4,6 +4,7 @@ import org.junit.BeforeClass;
 import org.testng.Assert;
 import org.testng.ITestContext;
 import org.testng.annotations.BeforeGroups;
+import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -15,27 +16,27 @@ public class MyAccountLogin extends SeleniumFactory {
 
 	Log4jLogger testLogger = new Log4jLogger();
 	private ThreadLocal<String> testName= new ThreadLocal<String>();
-//@BeforeSuite
-//
-//public void runSetup() {
-//	testSetup();
-//	
-//}
+@BeforeSuite
+
+public void runSetup() {
+	testSetup();
+	
+}
 	
 	// testname generator for data provider
 	
-	@BeforeTest
-	
-	public void beforeMethod(Method method,Object[] testdata,ITestContext ctx) {
-		if (testdata.length>0) {
-			testName.set(method.getName()+"_"+testdata[0]);
-			ctx.setAttribute("testName", testName.get());
-		}
-		else {
-			ctx.setAttribute("testName", method.getName());
-		}
-				
-	}
+//	@BeforeTest
+//	
+//	public void beforeMethod(Method method,Object[] testdata,ITestContext ctx) {
+//		if (testdata.length>0) {
+//			testName.set(method.getName()+"_"+testdata[0]);
+//			ctx.setAttribute("testName", testName.get());
+//		}
+//		else {
+//			ctx.setAttribute("testName", method.getName());
+//		}
+//				
+//	}
 	
 	
 @Test
