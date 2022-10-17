@@ -24,9 +24,7 @@
 				<version>3.0.0-M5</version>
 				<configuration>
 					<suiteXmlFiles>
-						<suiteFile>
-							E:\Java\SeleniumUIAutomation\testSuites\regressionSuite.xml
-						</suiteFile>
+						<suiteFile>E:\Java\SeleniumUIAutomation\testng.xml</suiteFile>
 					</suiteXmlFiles>
 				</configuration>
 			</plugin>
