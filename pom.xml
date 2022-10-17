@@ -25,7 +25,7 @@
 				<configuration>
 					<suiteXmlFiles>
 						<suiteFile>
-							./testSuites/regressionSuite.xml
+							E:\Java\SeleniumUIAutomation\testSuites\regressionSuite.xml
 						</suiteFile>
 					</suiteXmlFiles>
 				</configuration>
