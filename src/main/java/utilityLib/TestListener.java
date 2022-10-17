@@ -48,41 +48,42 @@ public class TestListener implements ITestListener {
 		ExtentTestManager.getTest().log(Status.FAIL,"Test Failed");
 		ExtentTestManager.getTest().fail("<details><summary><b><font color=red>" + "Exception occured, click to view details:" + "</font></b></summary>"+
 		 excepMsg.replaceAll(",","<br>")+"</details> \n");
-//		String screenshotPath = SeleniumFactory.captureSnap(result.getMethod().getMethodName());
-//		testLogger.error(result.getThrowable());
-//		//attach snap o report
-//		try {
-//			ExtentTestManager.getTest().fail("Screenshot",
-//				MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
-//		}
-//		catch (IOException e) {
-//	//		testLogger.ino("Somewthing went worng while attaching snap to report");
-//			testLogger.error(e);
-//		}
-		DateFormat dateFormat = new SimpleDateFormat("ddMMyyyy");
-		DateFormat timeFormat = new SimpleDateFormat("HHmmss");
-		Date date =new Date();
-		String dateFolder = dateFormat.format(date);
-		String currTime = timeFormat.format(date);
-		String fs = System.getProperty("user.dir")+"//screenshots//"+dateFolder+"//"+result.getMethod().getMethodName()+"_"+currTime+".png";
-		File outputFile = new File(System.getProperty("user.dir")+"//screenshots//"+dateFolder+"//"+result.getMethod().getMethodName()+"_"+currTime+".png");
-		outputFile.getParentFile().mkdirs();
-		Screenshot fpScreenshot = new AShot().shootingStrategy(ShootingStrategies.viewportPasting(1000)).takeScreenshot(BrowserFactory.getDriver());
+		String screenshotPath = SeleniumFactory.captureSnap(result.getMethod().getMethodName());
+		//	testLogger.error(result.getThrowable());
+		//attach snap o report
 		try {
-			ImageIO.write(fpScreenshot.getImage(),"PNG",outputFile);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			ExtentTestManager.getTest().fail("Screenshot",
+				MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
 		}
-		try {
-		ExtentTestManager.getTest().fail("<b><font color=red>"+"Screenshot"+"</font></b>",
-			MediaEntityBuilder.createScreenCaptureFromPath(fs).build());
-	}
-	catch (Exception e) {
-		ExtentTestManager.getTest().fail("Somewthing went worng while attaching snap to report");
-		testLogger.info("Somewthing went worng while attaching snap to report");
-		testLogger.error(e);
-	}
+		catch (Exception e) {
+	//		testLogger.ino("Somewthing went worng while attaching snap to report");
+	//		testLogger.error(e);
+		}
+//		DateFormat dateFormat = new SimpleDateFormat("ddMMyyyy");
+//		DateFormat timeFormat = new SimpleDateFormat("HHmmss");
+//		Date date =new Date();
+//		String dateFolder = dateFormat.format(date);
+//		String currTime = timeFormat.format(date);
+//		String fs = System.getProperty("user.dir")+"//screenshots//"+dateFolder+"//"+result.getMethod().getMethodName()+"_"+currTime+".png";
+//		File outputFile = new File(System.getProperty("user.dir")+"//screenshots//"+dateFolder+"//"+result.getMethod().getMethodName()+"_"+currTime+".png");
+//		outputFile.getParentFile().mkdirs();
+//		Screenshot fpScreenshot = new AShot().shootingStrategy(ShootingStrategies.viewportPasting(1000)).takeScreenshot(BrowserFactory.getDriver());
+//		
+//		try {
+//			ImageIO.write(fpScreenshot.getImage(),"PNG",outputFile);
+//		} catch (IOException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//		try {
+//		ExtentTestManager.getTest().fail("<b><font color=red>"+"Screenshot"+"</font></b>",
+//			MediaEntityBuilder.createScreenCaptureFromPath(fs).build());
+//	}
+//	catch (Exception e) {
+//		ExtentTestManager.getTest().fail("Somewthing went worng while attaching snap to report");
+//		testLogger.info("Somewthing went worng while attaching snap to report");
+//		testLogger.error(e);
+//	}
 		
 	}
 

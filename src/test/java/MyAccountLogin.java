@@ -1,5 +1,4 @@
 import java.lang.reflect.Method;
-import org.junit.BeforeClass;
 import org.testng.Assert;
 import org.testng.ITestContext;
 import org.testng.annotations.BeforeGroups;
