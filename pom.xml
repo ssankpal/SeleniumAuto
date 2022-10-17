@@ -40,7 +40,7 @@
 					<source></source>
 					<target>1.8</target>
 					<fork>true</fork>
-					<executable>C:\Program Files\Java\jre1.8.0_51\bin\javac</executable>
+					<executable></executable>
 				</configuration>
 			</plugin>
 
@@ -59,7 +59,7 @@
 		<dependency>
 			<groupId>org.testng</groupId>
 			<artifactId>testng</artifactId>
-			<version>6.14.3</version>
+			<version>7.3.0</version>
 			
 		</dependency>
 
