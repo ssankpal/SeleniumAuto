@@ -1,5 +1,4 @@
 import java.lang.reflect.Method;
-
 import org.junit.BeforeClass;
 import org.testng.Assert;
 import org.testng.ITestContext;
@@ -14,9 +13,9 @@ import utilityLib.Log4jLogger;
 
 public class MyAccountLogin extends SeleniumFactory {
 
-	Log4jLogger testLogger = new Log4jLogger();
+//	Log4jLogger testLogger = new Log4jLogger();
 	private ThreadLocal<String> testName= new ThreadLocal<String>();
-@BeforeSuite
+//@BeforeSuite
 
 public void runSetup() {
 	testSetup();
@@ -41,32 +40,27 @@ public void runSetup() {
 	
 @Test
 	
-	public void myAccLogin() {
+	public void myAccLogin_Positive() {
 		
-		
+		getDriver().manage().window().maximize();
 	//	getDriver().get("http://tutorialsninja.com/demo/index.php?");
-	testLogger.info("Logging Test sample");
+//	testLogger.info("Logging Test sample");
 	getDriver().navigate().to("http://tutorialsninja.com/demo/index.php?");
 //	getDriver().manage().window().setPosition(new Point(0, -1000));
-	try {
-		Thread.sleep(10000);
-	} catch (InterruptedException e1) {
-		// TODO Auto-generated catch block
-		e1.printStackTrace();
-	}
 		BasePage.homePage().myAccMenu.click();
 		BasePage.homePage().loginMenu.click();
 		SeleniumFactory.txtBxType(BasePage.loginPage().userEmail, "sachinsankpal1@gmail.com");
-		SeleniumFactory.txtBxType(BasePage.loginPage().userPwd, "pass1234");
+		SeleniumFactory.txtBxType(BasePage.loginPage().userPwd, "pass123");
 		BasePage.loginPage().loginBtn.click();
 		try {
 		BasePage.loginPage().editAccLnk.isDisplayed();
-		testLogger.info("Succesfully Logged to My Account");
+	//	testLogger.info("Successfully Logged to My Account");
+		Log4jLogger.info("Successful Log In to My Account");
 		System.out.println("Login successful!");
 		
 		}
 		catch (Exception e) {
-			testLogger.info("Login Failed! -logger");
+			Log4jLogger.info("Login Failed!");
 			System.out.println("Login Failed!");
 			Assert.fail();
 		}
@@ -75,19 +69,50 @@ public void runSetup() {
 					
 	}
 
-@Test (invocationCount=2, threadPoolSize=5)
-public void t1() {
-	System.out.println("This is T1");
+@Test
+
+public void myAccLogin_Negative() {
+	
+	getDriver().manage().window().maximize();
+//	getDriver().get("http://tutorialsninja.com/demo/index.php?");
+//testLogger.info("Logging Test sample");
+getDriver().navigate().to("http://tutorialsninja.com/demo/index.php?");
+//getDriver().manage().window().setPosition(new Point(0, -1000));
+	BasePage.homePage().myAccMenu.click();
+	BasePage.homePage().loginMenu.click();
+	SeleniumFactory.txtBxType(BasePage.loginPage().userEmail, "sachinsankpal1@gmail.com");
+	SeleniumFactory.txtBxType(BasePage.loginPage().userPwd, "pass12");
+	BasePage.loginPage().loginBtn.click();
+	try {
+	BasePage.loginPage().editAccLnk.isDisplayed();
+	Log4jLogger.info("Succesfully Logged In to My Account");
+	System.out.println("Login successful!");
+	
+	}
+	catch (Exception e) {
+		Log4jLogger.info("Login Failed! -logger");
+		Log4jLogger.error(e);
+		System.out.println("Login Failed!");
+		Assert.fail();
+	}
+	
+	
+				
 }
 
-
-@BeforeClass 
-public void t2() {
-	System.out.println("This is BeforeClass");
-}
-
-@BeforeGroups
-public void t3() {
-	System.out.println("This is BeforeGroups");
-}
+//@Test (invocationCount=2, threadPoolSize=5)
+//public void t1() {
+//	System.out.println("This is T1");
+//}
+//
+//
+//@BeforeClass 
+//public void t2() {
+//	System.out.println("This is BeforeClass");
+//}
+//
+//@BeforeGroups
+//public void t3() {
+//	System.out.println("This is BeforeGroups");
+//}
 }

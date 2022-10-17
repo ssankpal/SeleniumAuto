@@ -1,5 +1,8 @@
 package helperBase;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
@@ -14,7 +17,7 @@ public class testNGConfig extends SeleniumFactory {
 		if(browser.isEmpty()) {
 			testSetup();	
 		}
-		
+	
 		testSetup(browser);
 	//	String url = "";
 		getDriver().manage().window().maximize();

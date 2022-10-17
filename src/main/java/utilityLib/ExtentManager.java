@@ -3,8 +3,7 @@ package utilityLib;
 import java.io.File;
 
 import com.aventstack.extentreports.ExtentReports;
-import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
-import com.aventstack.extentreports.reporter.configuration.ChartLocation;
+import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 
 public class ExtentManager {
@@ -29,15 +28,13 @@ public class ExtentManager {
 	public static ExtentReports createInstance() {
 		
 		String fileName= getReportPath(reportFilepath);
-		ExtentHtmlReporter htmlReporter = new ExtentHtmlReporter(fileName);
-        htmlReporter.config().setTestViewChartLocation(ChartLocation.BOTTOM);
-        htmlReporter.config().setChartVisibilityOnOpen(true);
+        ExtentSparkReporter htmlReporter = new ExtentSparkReporter(fileName);
         htmlReporter.config().setTheme(Theme.DARK);
-        htmlReporter.config().setDocumentTitle(reportFileName);
+        htmlReporter.config().setReportName("Automation Test Result");
         htmlReporter.config().setEncoding("utf-8");
-        htmlReporter.config().setReportName(fileName);
+        htmlReporter.config().setReportName("Automation Results");
         htmlReporter.config().setTimeStampFormat("EEEE, MMMM dd, yyyy, hh:mm a '('zzz')'");
-
+        
         extent = new ExtentReports();
         extent.attachReporter(htmlReporter);
 

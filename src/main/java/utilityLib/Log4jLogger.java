@@ -27,15 +27,15 @@ public class Log4jLogger {
 		System.setProperty("testName", textName);
 	}
 	
-	Logger logger = LogManager.getLogger();
+	private static Logger logger = LogManager.getLogger();
 	
-	public void info(String info) {
+	public static void info(String info) {
 	//	System.out.println(info);
 		logger.info(info);
-	}
+		}
 	
-	public void error(Throwable T) {
-		logger.error(getClass(), T);
+	public static void error(Throwable T) {
+		logger.error(T);
 	}
 	
 

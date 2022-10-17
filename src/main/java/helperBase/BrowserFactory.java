@@ -4,6 +4,8 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Properties;
 
 import org.openqa.selenium.WebDriver;
@@ -45,7 +47,7 @@ public class BrowserFactory {
 	// read browser name from config
 
 	public static void testSetup(String bName) {
-
+	
 	//	String bName = PR.getProperty("BrowserName");
 
 		if (bName.equalsIgnoreCase("Firefox")) {
