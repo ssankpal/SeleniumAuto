@@ -21,10 +21,10 @@
 
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
-				<version>3.0.0-M5</version>
-				<configuration>
+				<version>3.0.0-M5</version> 
+					<configuration>
 					<suiteXmlFiles>
-						<suiteFile>E:\Java\SeleniumUIAutomation\testng.xml</suiteFile>
+						<suiteFile>testng.xml</suiteFile>
 					</suiteXmlFiles>
 				</configuration>
 			</plugin>
@@ -33,7 +33,7 @@
 
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.8.1</version>
+				<version>3.10.1</version>
 				<configuration>
 					<source></source>
 					<target>1.8</target>

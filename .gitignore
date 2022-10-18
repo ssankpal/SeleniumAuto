@@ -1,4 +1,3 @@
-/target/
 /test-output/
 /screenshots
 .classpath
@@ -7,3 +6,4 @@
 /testReports/
 /logs/
 /jReport/
+/target/

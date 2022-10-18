@@ -75,7 +75,7 @@ public void myAccLogin_Negative() {
 	getDriver().manage().window().maximize();
 //	getDriver().get("http://tutorialsninja.com/demo/index.php?");
 //testLogger.info("Logging Test sample");
-getDriver().navigate().to("http://tutorialsninja.com/demo/index.php?");
+	getDriver().navigate().to("http://tutorialsninja.com/demo/index.php?");
 //getDriver().manage().window().setPosition(new Point(0, -1000));
 	BasePage.homePage().myAccMenu.click();
 	BasePage.homePage().loginMenu.click();
@@ -97,6 +97,13 @@ getDriver().navigate().to("http://tutorialsninja.com/demo/index.php?");
 	
 	
 				
+}
+@Test
+public void getTitle() {
+	
+	getDriver().manage().window().maximize();
+	getDriver().get("https://www.amazon.in");
+	System.out.println(getDriver().getTitle());
 }
 
 //@Test (invocationCount=2, threadPoolSize=5)
