@@ -17,8 +17,9 @@ public class testNGConfig extends SeleniumFactory {
 		if(browser.isEmpty()) {
 			testSetup();	
 		}
-	
+		else {
 		testSetup(browser);
+		}
 	//	String url = "";
 		getDriver().manage().window().maximize();
 	//	getDriver().get(url);

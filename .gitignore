@@ -1,6 +1,7 @@
 /screenshots
 /logs/
-/target/
 /testReports
 /target/
-/test-output
+/test-output/
+.settings
+/jReport/
