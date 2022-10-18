@@ -1,4 +1,7 @@
 import java.lang.reflect.Method;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.ITestContext;
 import org.testng.annotations.BeforeGroups;
@@ -8,6 +11,7 @@ import org.testng.annotations.Test;
 
 import helperBase.BasePage;
 import helperBase.SeleniumFactory;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import utilityLib.Log4jLogger;
 
 public class MyAccountLogin extends SeleniumFactory {
@@ -37,7 +41,7 @@ public void runSetup() {
 //	}
 	
 	
-@Test
+//@Test
 	
 	public void myAccLogin_Positive() {
 		
@@ -68,7 +72,7 @@ public void runSetup() {
 					
 	}
 
-@Test
+//@Test
 
 public void myAccLogin_Negative() {
 	
@@ -100,9 +104,10 @@ public void myAccLogin_Negative() {
 }
 @Test
 public void getTitle() {
-	
-	getDriver().manage().window().maximize();
-	getDriver().get("https://www.amazon.in");
+	WebDriverManager.chromedriver().setup();
+	WebDriver driver = new ChromeDriver();
+	driver.manage().window().maximize();
+	driver.get("https://www.amazon.in");
 	System.out.println(getDriver().getTitle());
 }
 
