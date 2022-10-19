@@ -122,6 +122,14 @@ public class TestListener implements ITestListener {
 		File srcFile = new File(System.getProperty("user.dir")+fileSeperator+"testReports"+fileSeperator+System.getProperty("current.date")
 		+fileSeperator+"report-Name_"+System.getProperty("current.date.time")+".html");
 		System.out.println(srcFile.toString());
+	//	String fileSeperator = System.getProperty("file.separator");
+		File deDir = new File(System.getProperty("user.dir")+fileSeperator+"jReport");
+		try {
+			FileUtils.cleanDirectory(deDir);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		try {
 			FileUtils.copyFileToDirectory(srcFile,destDir);
 		} catch (IOException e) {
