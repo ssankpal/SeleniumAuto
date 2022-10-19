@@ -1,3 +1,4 @@
+package utilityLib;
 
 
 
@@ -23,9 +24,6 @@ import helperBase.SeleniumFactory;
 import ru.yandex.qatools.ashot.AShot;
 import ru.yandex.qatools.ashot.Screenshot;
 import ru.yandex.qatools.ashot.shooting.ShootingStrategies;
-import utilityLib.ExtentManager;
-import utilityLib.ExtentTestManager;
-import utilityLib.Log4jLogger;
 
 public class TestListener implements ITestListener {
 
@@ -104,14 +102,14 @@ public class TestListener implements ITestListener {
 	public void onStart(ITestContext context) {
 		// TODO Auto-generated method stub
 		Log4jLogger.info("Starting Suite Execution");
-		String fileSeperator = System.getProperty("file.separator");
-		File destDir = new File(System.getProperty("user.dir")+fileSeperator+"jReport");
-		try {
-			FileUtils.cleanDirectory(destDir);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+//		String fileSeperator = System.getProperty("file.separator");
+//		File destDir = new File(System.getProperty("user.dir")+fileSeperator+"jReport");
+//		try {
+//			FileUtils.cleanDirectory(destDir);
+//		} catch (IOException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
 		
 	}
 
