@@ -3,10 +3,10 @@
 
 <suite name="Regression Test Suite" parallel="tests" thread-count="1">
 
-<!--<listeners>
+<listeners>
 
-<listener class-name="utilityLib.TestListener"></listener>
-</listeners>-->
+<listener class-name="TestListener"></listener>
+</listeners>
 
 <test name="Test">
 <parameter name="browser" value=""/>
