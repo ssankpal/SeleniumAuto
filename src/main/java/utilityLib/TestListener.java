@@ -126,12 +126,14 @@ public class TestListener implements ITestListener {
 		File deDir = new File(System.getProperty("user.dir")+fileSeperator+"jReport");
 		try {
 			FileUtils.cleanDirectory(deDir);
+			Log4jLogger.info("Deleted the old report");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		try {
 			FileUtils.copyFileToDirectory(srcFile,destDir);
+			Log4jLogger.info("Copied the new report");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
