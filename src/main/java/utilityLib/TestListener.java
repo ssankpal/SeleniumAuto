@@ -102,14 +102,14 @@ public class TestListener implements ITestListener {
 	public void onStart(ITestContext context) {
 		// TODO Auto-generated method stub
 		Log4jLogger.info("Starting Suite Execution");
-//		String fileSeperator = System.getProperty("file.separator");
-//		File destDir = new File(System.getProperty("user.dir")+fileSeperator+"jReport");
-//		try {
-//			FileUtils.cleanDirectory(destDir);
-//		} catch (IOException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
+		String fileSeperator = System.getProperty("file.separator");
+		File destDir = new File(System.getProperty("user.dir")+fileSeperator+"jReport");
+		try {
+			FileUtils.cleanDirectory(destDir);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 	}
 
@@ -123,14 +123,14 @@ public class TestListener implements ITestListener {
 		+fileSeperator+"report-Name_"+System.getProperty("current.date.time")+".html");
 		System.out.println(srcFile.toString());
 	//	String fileSeperator = System.getProperty("file.separator");
-		File deDir = new File(System.getProperty("user.dir")+fileSeperator+"jReport");
-		try {
-			FileUtils.cleanDirectory(deDir);
-			Log4jLogger.info("Deleted the old report");
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+//		File deDir = new File(System.getProperty("user.dir")+fileSeperator+"jReport");
+//		try {
+//			FileUtils.cleanDirectory(deDir);
+//			Log4jLogger.info("Deleted the old report");
+//		} catch (IOException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
 		try {
 			FileUtils.copyFileToDirectory(srcFile,destDir);
 			Log4jLogger.info("Copied the new report");
