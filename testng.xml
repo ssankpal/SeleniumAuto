@@ -5,7 +5,7 @@
 
 <listeners>
 
-<listener class-name="TestListener"></listener>
+<listener class-name="utilityLib.TestListener"></listener>
 </listeners>
 
 <test name="Test">
